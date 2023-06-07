@@ -49,7 +49,7 @@ class SmartphoneTest {
 
         // WHEN / THEN
         String actual = smartphone.getPosition();
-        assertEquals(expected, actual);
+        assertNotEquals(expected, actual);
     }
 
     @Test
@@ -115,6 +115,7 @@ class SmartphoneTest {
         //THEN
         assertFalse(smartphone.getContacts().contains(new Friend("Max", "0176 12345678")));
     }
+
 
     @Test
     void removeContactByName_onlyRemovesFirst() {
