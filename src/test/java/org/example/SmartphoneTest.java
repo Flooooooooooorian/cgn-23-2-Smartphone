@@ -49,7 +49,7 @@ class SmartphoneTest {
 
         // WHEN / THEN
         String actual = smartphone.getPosition();
-        assertNotEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
