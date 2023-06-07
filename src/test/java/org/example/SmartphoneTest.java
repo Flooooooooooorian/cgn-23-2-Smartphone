@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,7 +19,7 @@ class SmartphoneTest {
 
     @Test
     void testThatSmartphoneCanBeCreated() {
-        Smartphone smartphone =  testSmartphone();
+        Smartphone smartphone = testSmartphone();
         assertNotNull(smartphone);
     }
 
@@ -57,7 +56,7 @@ class SmartphoneTest {
     void addContact() {
         //GIVEN
         Smartphone smartphone = testSmartphone();
-        Contact newContact = new Friend("TestName","1941345651");
+        Contact newContact = new Friend("TestName", "1941345651");
 
         //WHEN
         smartphone.addContact(newContact);
@@ -93,20 +92,16 @@ class SmartphoneTest {
     }
 
     @Test
-    void getContactByName_whenContactNotFound_throwException() {
+    void getContactByName_whenContactNotFound_returnNull() {
         //GIVEN
         Smartphone smartphone = testSmartphone();
 
         //WHEN
-        try {
-            smartphone.getContactByName("DiesenNamenGibtEsNicht");
 
-            //THEN
-            fail();
-        }
-        catch (NoSuchElementException e) {
+        Contact actual = smartphone.getContactByName("DiesenNamenGibtEsNicht");
 
-        }
+        //THEN
+        assertNull(actual);
     }
 
     @Test

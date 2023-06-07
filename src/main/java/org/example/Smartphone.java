@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 public class Smartphone implements GPS,Radio{
 
@@ -73,7 +72,7 @@ public class Smartphone implements GPS,Radio{
                 return contact;
             }
         }
-        throw new NoSuchElementException("No Contact with name:" + name);
+        return null;
     }
 
     public void removeContactByName(String name) {
