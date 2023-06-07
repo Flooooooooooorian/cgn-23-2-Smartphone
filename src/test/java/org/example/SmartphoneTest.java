@@ -116,6 +116,7 @@ class SmartphoneTest {
         assertFalse(smartphone.getContacts().contains(new Friend("Max", "0176 12345678")));
     }
 
+
     @Test
     void removeContactByName_onlyRemovesFirst() {
         //GIVEN
